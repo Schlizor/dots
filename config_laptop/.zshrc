@@ -80,17 +80,18 @@ source $ZSH/oh-my-zsh.sh
 source /usr/local/texlive/2024/bin/x86_64-linux
 
 #source /opt/ros/jazzy/setup.zsh
-source /opt/ros/humble/setup.zsh
+source /opt/ros/noetic/setup.zsh
 #initilize ros2 Workspace
-#source $HOME/ros2_ws/install/setup.zsh
+source $HOME/livox_ws/src/ws_livox/devel/setup.zsh
+source $HOME/rog_ws/devel/setup.zsh
 
 #Colcon Autocompletion
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
+#source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
 
 
 alias whichRos="echo $ROS_DISTRO"
 alias rosNoetic='source /opt/ros/noetic/setup.zsh'
-alias rosJazzy='source /opt/ros/jazzy-base/setup.zsh'
+#alias rosJazzy='source /opt/ros/jazzy-base/setup.zsh'
 
 
 alias dots="cd ~/.dotfiles"
@@ -153,4 +154,26 @@ unset _colcon_prefix_chain_zsh_source_script
 # Create a custom prompt segment to show the OS symbol
 # ~/.zshrc
 
+
+# Add Anaconda to PATH
+# 
+# 
+# export PATH="$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
+
 eval "$(starship init zsh)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/thomas/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/thomas/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/thomas/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/thomas/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
