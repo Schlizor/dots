@@ -1,0 +1,132 @@
+@import "frappe.css";
+
+* {
+    font-family: "RobotoMono Nerd Font", monospace;
+    font-size: 13px;
+    color: @text;
+    padding: 0;
+
+}
+
+#window, #bar {
+margin: 0;
+padding: 0;
+border-top: 2px solid @green;
+}
+
+
+tooltip{
+    background: @surface0;
+    color: @text;
+}
+
+window#waybar {
+    background: @base;
+    color: @text;
+}
+
+#custom-power, #tray, #custom-notifications{
+background: @surface2;
+padding: 0 5px 0 5px;
+border-top: 2px solid @green;
+}
+
+#custom-power{
+color: @red;
+}
+
+#cpu, #memory, #temperature, #backlight, #battery{
+background: @surface2;
+padding: 0 5px 0 5px;
+border-top: 2px solid @green;
+}
+
+#clock {
+background: @surface0;
+padding: 0 5px 0 5px;
+border-top: 2px solid @green;
+}
+
+#network {
+background: @surface0;
+padding: 0 15px 0 7px;
+border-top: 2px solid @green;
+}
+
+#pulseaudio{
+background: @surface2;
+padding: 0 10px 0 7px;
+border-top: 2px solid @green;
+}
+
+#mpd, #idle_inhibitor, #power-profiles-daemon{
+background: @surface0;
+padding: 0 5px 0 5px;
+border-top: 2px solid @green;
+}
+
+#workspaces {
+background: @surface2;
+padding: 3px 3px 3px 3px;
+border-top: 2px solid @green;
+}
+
+#workspaces button {
+padding: 0 6 0 6px;
+background-color: transparent;
+}
+
+#workspaces button.active {
+background: @base;
+padding: 0 3px 0 3px;
+border-bottom: 3px solid @green;
+}
+
+#window{
+background: @surface2;
+border-top: 2px solid @green;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+color: @surface2;
+background: @surface0;
+font-size: 25px;
+
+}
+
+#custom-right-arrow-dark-border,
+#custom-left-arrow-dark-border {
+color: @surface2;
+background: @surface0;
+font-size: 25px;
+border-top: 2px solid @green;
+}
+
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+color: @surface0;
+background: @surface2;
+font-size: 25px;
+}
+
+#custom-right-arrow-light-border,
+#custom-left-arrow-light-border{
+color: @surface0;
+background: @surface2;
+font-size: 25px;
+border-top: 2px solid @green;
+}
+
+#custom-left-arrow-end-dark{
+background: @base;
+color: @surface0;
+font-size: 25px;
+}
+
+#custom-right-arrow-end-light, #custom-left-arrow-end-light{
+background: @base;
+color: @surface2;
+font-size: 25px;
+}
+
