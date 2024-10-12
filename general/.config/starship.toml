@@ -1,15 +1,15 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](surface0)\
+[](crust)\
 $os\
 $username\
-[](bg:blue fg:surface0)\
+[](bg:yellow fg:crust)\
 $directory\
-[](fg:blue bg:yellow)\
+[](fg:yellow bg:green)\
 $git_branch\
 $git_status\
-[](fg:yellow bg:overlay2)\
+[](fg:green bg:sapphire)\
 $c\
 $rust\
 $golang\
@@ -19,10 +19,10 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:overlay2 bg:surface0)\
+[](fg:sapphire bg:blue)\
 $docker_context\
 $conda\
-[](fg:surface0 bg:base)\
+[](fg:blue bg:base)\
 $time\
 [ ](fg:base)\
 $line_break$character"""
@@ -33,7 +33,7 @@ palette = 'catppuccin_mocha'
 
 [os]
 disabled = false
-style = "bg:surface0 fg:text"
+style = "bg:crust fg:text"
 
 [os.symbols]
 Windows = "󰍲"
@@ -59,12 +59,12 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:surface0 fg:text"
-style_root = "bg:surface0 fg:text"
+style_user = "bg:crust fg:text"
+style_root = "bg:crust fg:text"
 format = '[ $user ]($style)'
 
 [directory]
-style = "fg:base bg:blue"
+style = "fg:base bg:yellow"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -79,65 +79,65 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol $branch ](fg:base bg:yellow)]($style)'
+format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
 
 [git_status]
-style = "bg:yellow"
-format = '[[($all_status$ahead_behind )](fg:base bg:yellow)]($style)'
+style = "bg:green"
+format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:overlay2"
-format = '[[ $symbol( $version) ](fg:base bg:overlay2)]($style)'
+style = "bg:sapphire"
+format = '[[ $symbol( $version) ](fg:base bg:sapphire)]($style)'
 
 [c]
 symbol = " "
-style = "bg:overlay2"
-format = '[[ $symbol( $version) ](fg:base bg:overlay2)]($style)'
+style = "bg:sapphire"
+format = '[[ $symbol( $version) ](fg:base bg:sapphire)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:overlay2"
-format = '[[ $symbol( $version) ](fg:base bg:overlay2)]($style)'
+style = "bg:sapphire"
+format = '[[ $symbol( $version) ](fg:base bg:sapphire)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:overlay2"
-format = '[[ $symbol( $version) ](fg:base bg:overlay2)]($style)'
+style = "bg:sapphire"
+format = '[[ $symbol( $version) ](fg:base bg:sapphire)]($style)'
 
 [php]
 symbol = ""
-style = "bg:overlay2"
-format = '[[ $symbol( $version) ](fg:base bg:overlay2)]($style)'
+style = "bg:sapphire"
+format = '[[ $symbol( $version) ](fg:base bg:sapphire)]($style)'
 
 [java]
 symbol = " "
-style = "bg:overlay2"
-format = '[[ $symbol( $version) ](fg:base bg:overlay2)]($style)'
+style = "bg:sapphire"
+format = '[[ $symbol( $version) ](fg:base bg:sapphire)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:overlay2"
-format = '[[ $symbol( $version) ](fg:base bg:overlay2)]($style)'
+style = "bg:sapphire"
+format = '[[ $symbol( $version) ](fg:base bg:sapphire)]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:overlay2"
-format = '[[ $symbol( $version) ](fg:base bg:overlay2)]($style)'
+style = "bg:sapphire"
+format = '[[ $symbol( $version) ](fg:base bg:sapphire)]($style)'
 
 [python]
 symbol = ""
-style = "bg:overlay2"
-format = '[[ $symbol( $version) ](fg:base bg:overlay2)]($style)'
+style = "bg:sapphire"
+format = '[[ $symbol( $version) ](fg:base bg:sapphire)]($style)'
 
 [docker_context]
 symbol = ""
-style = "bg:surface0"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:surface0)]($style)'
+style = "bg:crust"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:crust)]($style)'
 
 [conda]
-style = "bg:surface0"
-format = '[[ $symbol( $environment) ](fg:#83a598 bg:surface0)]($style)'
+style = "bg:crust"
+format = '[[ $symbol( $environment) ](fg:#83a598 bg:crust)]($style)'
 
 [time]
 disabled = false
@@ -152,9 +152,9 @@ disabled = false
 disabled = false
 success_symbol = '[](bold fg:green)'
 error_symbol = '[](bold fg:red)'
-vimcmd_symbol = '[](bold fg:surface0)'
-vimcmd_replace_one_symbol = '[](bold fg:surface0)'
-vimcmd_replace_symbol = '[](bold fg:surface0)'
+vimcmd_symbol = '[](bold fg:crust)'
+vimcmd_replace_one_symbol = '[](bold fg:crust)'
+vimcmd_replace_symbol = '[](bold fg:crust)'
 vimcmd_visual_symbol = '[](bold fg:green)'
 
 
