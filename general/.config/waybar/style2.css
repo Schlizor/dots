@@ -10,10 +10,9 @@
 
 #waybar{
     background: transparent;
-    border-radius: 10px; /* Rounded corners for a floating effect */
-    margin: 20px 20px; /* Adjust margins to control distance from edges */
-    padding: 5px; /* Padding inside the bar */
+    border-radius: 7;
 }
+
 
 #window {
     background: @surface2;
@@ -93,48 +92,4 @@ tooltip {
 #workspaces button.urgent {
     background: @red;
     color: @base;
-}
-
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-    color: @surface2;
-    background: @surface0;
-    font-size: 21px;
-
-}
-
-#custom-right-arrow-dark-border,
-#custom-left-arrow-dark-border {
-    color: @surface2;
-    background: @surface0;
-    font-size: 21px;
-    border-top: 2px solid @green;
-}
-
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-    color: @surface0;
-    background: @surface2;
-    font-size: 21px;
-}
-
-#custom-right-arrow-light-border,
-#custom-left-arrow-light-border {
-    color: @surface0;
-    background: @surface2;
-    font-size: 21px;
-    border-top: 2px solid @green;
-}
-
-#custom-left-arrow-end-dark {
-    background: transparent;
-    color: @surface0;
-    font-size: 21px;
-}
-
-#custom-right-arrow-end-light,
-#custom-left-arrow-end-light {
-    background: transparent;
-    color: @surface2;
-    font-size: 21px;
 }

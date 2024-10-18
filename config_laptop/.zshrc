@@ -82,8 +82,8 @@ source /usr/local/texlive/2024/bin/x86_64-linux
 #source /opt/ros/jazzy/setup.zsh
 source /opt/ros/noetic/setup.zsh
 #initilize ros2 Workspace
-source $HOME/livox_ws/src/ws_livox/devel/setup.zsh
-source $HOME/rog_ws/devel/setup.zsh
+#source $HOME/livox_ws/src/ws_livox/devel/setup.zsh
+#source $HOME/rog_ws/devel/setup.zsh
 
 #Colcon Autocompletion
 #source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
