@@ -152,8 +152,26 @@ return {
 		--  - settings (table): Override the default settings passed when initializing the server.
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
-			clangd = {},
-            codelldb = {},
+			clangd = {
+				cmd = {
+					"clangd",
+					"--background-index",
+					"--pch-storage=memory",
+					"--all-scopes-completion",
+					"--pretty",
+					"--header-insertion=never",
+					"-j=4",
+					"--inlay-hints",
+					"--header-insertion-decorators",
+					"--function-arg-placeholders",
+					"--completion-style=detailed",
+				},
+				filetypes = { "c", "cpp", "objc", "objcpp" },
+				root_dir = require("lspconfig").util.root_pattern("src"),
+				init_option = { fallbackFlags = { "-std=c++2a" } },
+				capabilities = capabilities,
+			},
+			codelldb = {},
 			-- gopls = {},
 			-- pyright = {},
 			-- rust_analyzer = {},
@@ -163,8 +181,8 @@ return {
 			--    https://github.com/pmizio/typescript-tools.nvim
 			--
 			-- But for many setups, the LSP (`tsserver`) will work just fine
-            cmake = {},
-            ruff = {},
+			cmake = {},
+			ruff = {},
 			pylsp = {
 				settings = {
 					pylsp = {
@@ -246,4 +264,3 @@ return {
 		})
 	end,
 }
-
