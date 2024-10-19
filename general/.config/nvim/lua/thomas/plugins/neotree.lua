@@ -309,8 +309,17 @@ return {
 		})
 
 		vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
-		vim.keymap.set("n", "<leader>ee", ":Neotree toggle position=left<CR>", { noremap = true, silent = true }) -- Toggle file explorer
-		vim.keymap.set("n", "<leader>ngs", ":Neotree float git_status<CR>", { noremap = true, silent = true }) -- open git status window
-        vim.keymap.set("n", "<leader>eg", ":Neotree focus position=left<CR>", { noremap = true, silent = true}) -- focus
+		vim.keymap.set(
+			"n",
+			"<leader>ee",
+			":Neotree toggle position=left<CR>",
+			{ desc = "Toggle Explorer", noremap = true, silent = true }
+		) -- Toggle file explorer
+		vim.keymap.set(
+			"n",
+			"<leader>eg",
+			":Neotree focus position=left<CR>",
+			{ desc = "Focus Explorer", noremap = true, silent = true }
+		) -- focus
 	end,
 }

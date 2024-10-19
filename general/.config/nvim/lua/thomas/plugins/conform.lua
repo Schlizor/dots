@@ -27,13 +27,26 @@ return {
 				timeout_ms = 500,
 				lsp_format = "fallback",
 			},
+			formatters = {
+				clang_format = {
+					prepend_args = {
+						"-style={ \
+                        IndentWidth: 4, \
+                        TabWidth: 4, \
+                        UseTab: Never,\
+						AccessModifierOffset: 0, \
+						IndentAccessModifiers: true, \
+						PackConstructorInitializers: Never}",
+					},
+				},
+			},
 		})
 
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      pattern = "*",
-      callback = function(args)
-        require("conform").format({ bufnr = args.buf })
-      end,
-    })
-  end,
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*",
+			callback = function(args)
+				require("conform").format({ bufnr = args.buf })
+			end,
+		})
+	end,
 }
