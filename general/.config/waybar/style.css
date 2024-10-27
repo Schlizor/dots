@@ -1,4 +1,4 @@
-@import "frappe.css";
+@import "mocha.css";
 
 * {
     border: none;
@@ -8,11 +8,14 @@
     min-height: 0;
 }
 
-#waybar{
+#waybar {
     background: transparent;
-    border-radius: 10px; /* Rounded corners for a floating effect */
-    margin: 20px 20px; /* Adjust margins to control distance from edges */
-    padding: 5px; /* Padding inside the bar */
+    border-radius: 10px;
+    /* Rounded corners for a floating effect */
+    margin: 20px 20px;
+    /* Adjust margins to control distance from edges */
+    padding: 5px;
+    /* Padding inside the bar */
 }
 
 #window {

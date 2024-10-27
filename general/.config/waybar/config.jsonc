@@ -3,8 +3,7 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "spacing": 0, // Gaps between modules (0px) Adjusted in the css
-    "height": 24, // Waybar height (to be removed for auto height)
-
+    // "height": 24, // Waybar height (to be removed for auto height)
     "modules-left": [
         "hyprland/workspaces",
         "custom/media",
@@ -38,75 +37,69 @@
         "tray",
         "custom/power"
     ],
-
-
     "custom/left-arrow-end-dark": {
-            "format": "",
-            "tooltip": false
+        "format": "",
+        "tooltip": false
     },
     "custom/left-arrow-dark": {
-            "format": "",
-            "tooltip": false
+        "format": "",
+        "tooltip": false
     },
     "custom/left-arrow-light": {
-
-            "format": "",
-            "tooltip": false
+        "format": "",
+        "tooltip": false
     },
-
-        "custom/left-arrow-dark-border": {
-            "format": "",
-            "tooltip": false
+    "custom/left-arrow-dark-border": {
+        "format": "",
+        "tooltip": false
     },
     "custom/left-arrow-light-border": {
-
-            "format": "",
-            "tooltip": false
+        "format": "",
+        "tooltip": false
     },
-
     "custom/left-arrow-end-light": {
-            "format": "",
-            "tooltip": false
+        "format": "",
+        "tooltip": false
     },
     "custom/right-arrow-end-light": {
-            "format": "",
-            "tooltip": false
+        "format": "",
+        "tooltip": false
     },
     "custom/right-arrow-dark": {
-            "format": "",
-            "tooltip": false
+        "format": "",
+        "tooltip": false
     },
     "custom/right-arrow-light": {
-            "format": "",
-            "tooltip": false
+        "format": "",
+        "tooltip": false
     },
     // Modules configuration
-      "hyprland/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
-         "warp-on-scroll": false,
-         "format": "{icon} ",
-         "format-icons": {
-             "8": "",
-             "1": "",
-             "2": "",
-             "4": "󰎞",
-             "3": "",
-             "5": "",
-             "6": "",
-             "7": "",
-             "urgent": "",
-             "focused": ""
-         },
-         "persistent-workspaces": {
+        "warp-on-scroll": false,
+        "format": "{icon} ",
+        "format-icons": {
+            "8": "",
+            "1": "",
+            "2": "",
+            "4": "󰎞",
+            "3": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "urgent": "",
+            "focused": ""
+        },
+        "persistent-workspaces": {
             "1": [],
             "2": [],
             "3": [],
             "4": [],
             "5": []
-    }
-     },
-     "hyprland/window": {
+        }
+    },
+    "hyprland/window": {
         "max-length": 50
     },
     "keyboard-state": {
@@ -124,7 +117,10 @@
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
-        "format-icons": ["", ""],
+        "format-icons": [
+            "",
+            ""
+        ],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
@@ -183,12 +179,26 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
     },
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "battery": {
         "states": {
@@ -203,21 +213,27 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": " ",
-        "performance": " ",
-        "balanced": " ",
-        "power-saver": " "
-      }
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": " ",
+            "performance": " ",
+            "balanced": " ",
+            "power-saver": " "
+        }
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -243,7 +259,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     },
@@ -263,12 +283,11 @@
         "format": "⏻ ",
         "exec": "echo ; echo 󰟡 power // blur",
         "on-click": "~/.config/hypr/scripts/wlogout.sh",
-        "interval" : 86400, // once every day
+        "interval": 86400, // once every day
         "tooltip": true
-},
-
+    },
     "custom/notification": {
-        "tooltip":true,
+        "tooltip": true,
         "format": "{icon} {}",
         "format-icons": {
             "notification": "<span foreground='red'><sup></sup></span>",
@@ -287,54 +306,44 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-
     "custom/arrow1": {
-		"format": "",
-		"tooltip": false
-	},
-
-	"custom/arrow2": {
-		"format": "",
-		"tooltip": false
-	},
-
-	"custom/arrow3": {
-		"format": "",
-		"tooltip": false
-	},
-
-	"custom/arrow4": {
-		"format": "",
-		"tooltip": false
-	},
-
-	"custom/arrow5": {
-		"format": "",
-		"tooltip": false
-	},
-
-	"custom/arrow6": {
-		"format": "",
-		"tooltip": false
-	},
-
-	"custom/arrow7": {
-		"format": "",
-		"tooltip": false
-	},
-
-	"custom/arrow8": {
-		"format": "",
-		"tooltip": false
-	},
-
-	"custom/arrow9": {
-		"format": "",
-		"tooltip": false
-	},
-
-	"custom/arrow10": {
-		"format": "",
-		"tooltip": false
-	}
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow2": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow3": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow4": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow5": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow6": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow7": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow8": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow9": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow10": {
+        "format": "",
+        "tooltip": false
+    }
 }

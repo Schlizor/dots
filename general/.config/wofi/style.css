@@ -1,6 +1,6 @@
-@import "frappe.css";
+@import "mocha.css";
 
-*{
+* {
     font-family: JetBrains Mono Nerd Font;
 }
 
@@ -17,15 +17,15 @@ window {
 
 #input {
     margin-bottom: 15px;
-    padding:3px;
+    padding: 3px;
     border-radius: 5px;
-    border:none;
-    outline:none;
-    color: white; 
+    border: none;
+    outline: none;
+    color: white;
     color: #c6d0f5;
     /* background: @base1; */
     /* background-color: #737994; */
-    
+
 }
 
 #inner-box {
@@ -53,6 +53,6 @@ window {
 #entry:selected {
     color: black;
     background-color: @mantle;
-    border:none;
-    outline:none;
+    border: none;
+    outline: none;
 }

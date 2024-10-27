@@ -81,6 +81,7 @@ source /usr/local/texlive/2024/bin/x86_64-linux
 
 #source /opt/ros/jazzy/setup.zsh
 source /opt/ros/noetic/setup.zsh
+source $HOME/workspaces/go2_ws/devel/setup.zsh
 #initilize ros2 Workspace
 #source $HOME/livox_ws/src/ws_livox/devel/setup.zsh
 #source $HOME/rog_ws/devel/setup.zsh
@@ -116,8 +117,8 @@ _colcon_prefix_chain_zsh_source_script() {
 
 # source this prefix
 # setting COLCON_CURRENT_PREFIX avoids determining the prefix in the sourced script
-COLCON_CURRENT_PREFIX="$(builtin cd -q "`dirname "${(%):-%N}"`" > /dev/null && pwd)"
-_colcon_prefix_chain_zsh_source_script "$COLCON_CURRENT_PREFIX/local_setup.zsh"
+#COLCON_CURRENT_PREFIX="$(builtin cd -q "`dirname "${(%):-%N}"`" > /dev/null && pwd)"
+#_colcon_prefix_chain_zsh_source_script "$COLCON_CURRENT_PREFIX/local_setup.zsh"
 
 unset COLCON_CURRENT_PREFIX
 unset _colcon_prefix_chain_zsh_source_script
