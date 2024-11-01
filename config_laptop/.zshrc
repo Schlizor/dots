@@ -74,17 +74,10 @@ export QT_QPA_PLATFORM=xcb
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fast-syntax-highlighting zsh-autosuggestions)
 
-
 source $ZSH/oh-my-zsh.sh
 
-<<<<<<< Updated upstream
-source /usr/local/texlive/2024/bin/x86_64-linux
-
-#source /opt/ros/jazzy/setup.zsh
-source /opt/ros/noetic/setup.zsh
 source $HOME/workspaces/go2_ws/devel/setup.zsh
-=======
->>>>>>> Stashed changes
+
 #initilize ros2 Workspace
 #source $HOME/livox_ws/src/ws_livox/devel/setup.zsh
 #source $HOME/rog_ws/devel/setup.zsh
@@ -105,12 +98,6 @@ if [[ -f /etc/os-release && "$(grep '^ID=' /etc/os-release)" == "ID=ubuntu" ]]; 
     alias whichRos="echo $ROS_DISTRO"
     source /opt/ros/noetic/setup.zsh
 
-fi
-# Sources like ROS which only should be sourced when I am in my Ubuntu distro
-if [[ -f /etc/os-release && "$(grep '^ID=' /etc/os-release)" == "ID=ubuntu" ]]; then
-    # Führe nur auf Ubuntu diese Befehle aus
-    alias whichRos="echo $ROS_DISTRO"
-    alias rosNoetic='source /opt/ros/noetic/setup.zsh'
 fi
 
 alias dots="cd ~/dots"
