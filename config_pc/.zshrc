@@ -13,12 +13,6 @@ ZSH_THEME="agnoster"
 #necessary for Wayland (e.g. Rviz2 will not run otherwise)
 export QT_QPA_PLATFORM=xcb
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -77,80 +71,25 @@ plugins=(git fast-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-source /usr/local/texlive/2024/bin/x86_64-linux
+#Sources for Manjaro (Main Distro)
+if [[ -f /etc/os-release && "$(grep '^ID=' /etc/os-release)" == "ID=manjaro" ]]; then
 
-#source /opt/ros/jazzy/setup.zsh
-source /opt/ros/humble/setup.zsh
-#initilize ros2 Workspace
-#source $HOME/ros2_ws/install/setup.zsh
+    source /usr/local/texlive/2024/bin/x86_64-linux
 
-#Colcon Autocompletion
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
+fi
 
+# Sources like ROS which only should be sourced when I am in my Ubuntu distro
+if [[ -f /etc/os-release && "$(grep '^ID=' /etc/os-release)" == "ID=ubuntu" ]]; then
 
-alias whichRos="echo $ROS_DISTRO"
-alias rosNoetic='source /opt/ros/noetic/setup.zsh'
-alias rosJazzy='source /opt/ros/jazzy-base/setup.zsh'
+    alias whichRos="echo $ROS_DISTRO"
+    source /opt/ros/noetic/setup.zsh
 
+fi
 
-alias dots="cd ~/.dotfiles"
+alias dots="cd ~/dots"
 alias fhnotes="nvim ~/Documents/FH_Vault/Vault"
 
 alias eb="code ~/.zshrc"
 alias sb="source ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-
-_colcon_prefix_chain_zsh_source_script() {
-  if [ -f "$1" ]; then
-    if [ -n "$COLCON_TRACE" ]; then
-      echo "# . \"$1\""
-    fi
-    . "$1"
-  else
-    echo "not found: \"$1\"" 1>&2
-  fi
-}
-
-# source this prefix
-# setting COLCON_CURRENT_PREFIX avoids determining the prefix in the sourced script
-COLCON_CURRENT_PREFIX="$(builtin cd -q "`dirname "${(%):-%N}"`" > /dev/null && pwd)"
-_colcon_prefix_chain_zsh_source_script "$COLCON_CURRENT_PREFIX/local_setup.zsh"
-
-unset COLCON_CURRENT_PREFIX
-unset _colcon_prefix_chain_zsh_source_script
-
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-# Create a custom prompt segment to show the OS symbol
-# ~/.zshrc
 
 eval "$(starship init zsh)"
