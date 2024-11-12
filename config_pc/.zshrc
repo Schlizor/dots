@@ -64,6 +64,8 @@ if [[ -f /etc/os-release && "$(grep '^ID=' /etc/os-release)" == "ID=ubuntu" ]]; 
     export PATH="$PATH:/opt/nvim-linux64/bin"
     source /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.zsh
 
+    source $HOME/workspaces/unilidar_sdk/unitree_lidar_ros2/install/setup.zsh
+
 fi
 
 alias dots="cd ~/dots" alias fhnotes="nvim ~/Documents/FH_Vault/Vault"
