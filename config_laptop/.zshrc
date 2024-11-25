@@ -89,21 +89,31 @@ source $HOME/workspaces/go2_ws/devel/setup.zsh
 if [[ -f /etc/os-release && "$(grep '^ID=' /etc/os-release)" == "ID=manjaro" ]]; then
 
     source /usr/local/texlive/2024/bin/x86_64-linux
+    
 
 fi
 
 # Sources like ROS which only should be sourced when I am in my Ubuntu distro
 if [[ -f /etc/os-release && "$(grep '^ID=' /etc/os-release)" == "ID=ubuntu" ]]; then
-
+    export PATH="$PATH:/opt/nvim-linux64/bin"
     alias whichRos="echo $ROS_DISTRO"
-    source /opt/ros/noetic/setup.zsh
+
+    # source /opt/ros/noetic/setup.zsh
+    source /opt/ros/humble/setup.zsh
+    source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh
+    source /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.zsh
+
+
+    export TB3_MODEL=burger
+    export GAZEBO_MODE=true
+    export TURTLEBOT3_MODEL=$TB3_MODEL
 
 fi
 
 alias dots="cd ~/dots"
 alias fhnotes="nvim ~/Documents/FH_Vault/Vault"
 
-alias eb="code ~/.zshrc"
+alias eb="vim ~/.zshrc"
 alias sb="source ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
