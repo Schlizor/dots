@@ -52,11 +52,26 @@ if [[ -f /etc/os-release && "$(grep '^ID=' /etc/os-release)" == "ID=manjaro" ]];
 
     source /usr/local/texlive/2024/bin/x86_64-linux
 
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/thomas/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/thomas/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/thomas/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/thomas/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+
 fi
 
 # Sources like ROS which only should be sourced when I am in my Ubuntu distro
 if [[ -f /etc/os-release && "$(grep '^ID=' /etc/os-release)" == "ID=ubuntu" ]]; then
-
+    export PATH="$PATH:/opt/nvim/nvim-linux64/bin"
     alias whichRos="echo $ROS_DISTRO" 
     #source /opt/ros/noetic/setup.zsh
     source /opt/ros/humble/setup.zsh
@@ -74,3 +89,6 @@ alias eb="vi ~/.zshrc" alias sb="source ~/.zshrc"
 
 eval "$(starship init zsh)"
 
+
+export ROS_DOMAIN_ID=30 #TURTLEBOT3
+export ROS_DOMAIN_ID=30 #TURTLEBOT3
